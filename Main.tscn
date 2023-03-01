@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sheep.tres" type="Material" id=1]
+[ext_resource path="res://Grass.tres" type="Material" id=2]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+material = ExtResource( 1 )
+size = Vector3( 1.308, 1.022, 1.202 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Floor" type="MeshInstance" parent="."]
+transform = Transform( 4.65115, 0, 0, 0, 1, 0, 0, 0, 3.46726, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="Sheep" type="MeshInstance" parent="."]
+transform = Transform( 0.0945683, 0, 0, 0, 0.140691, 0, 0, 0, 0.124314, -0.766965, 0, 0.592645 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="Sheep"]
+transform = Transform( 10.5016, -0.599173, 1.08336, -0.362975, 4.1068, 5.78988, -0.847468, -6.54967, 4.59259, 2.50893, 13.1092, 12.0051 )
+keep_aspect = 0
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Sheep/Camera"]
+transform = Transform( 1, 1.49012e-08, -1.11759e-08, -7.45058e-09, 1, 0, 7.45058e-09, -2.98023e-08, 1, -0.162721, 1.84107, 2.59559 )
+light_color = Color( 1, 0.937255, 0.603922, 1 )
